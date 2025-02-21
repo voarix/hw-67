@@ -17,7 +17,7 @@ const Screen = () => {
 
   return (
     <div style={{height: "50px"}} className={`${background} rounded bg-opacity-75`}>
-      {pinCodeValue}
+      <p style={{height: '20px'}} className='fs-4 fw-bold text-center letter-spacing-1 text-white'>{pinCodeValue}</p>
     </div>
   );
 };

@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { toast } from "react-toastify";
 
 interface PinCodeSlice {
   code: string;
@@ -27,12 +28,19 @@ export const pinCodeSlice = createSlice({
     checkPinCode: (state) => {
       if (state.code === state.correctCode) {
         state.status = "success";
+        state.code = 'Access Granted';
+        toast.success("PinCode was successfully entered");
       } else {
         state.status = "warning";
+        state.code = 'Access Denied';
+        toast.error("PinCode was unsuccessfully entered");
       }
+    },
+    resetPinCode: (state) => {
+      state.code = '';
     }
   }
 });
 
 export const pinCodeReducer = pinCodeSlice.reducer;
-export const {addIPinCode, removeIPinCode, checkPinCode} = pinCodeSlice.actions;
+export const {addIPinCode, removeIPinCode, checkPinCode, resetPinCode} = pinCodeSlice.actions;

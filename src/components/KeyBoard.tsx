@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { addIPinCode, checkPinCode, removeIPinCode } from "../PinCode/PinCodeSlice.ts";
+import { addIPinCode, checkPinCode, removeIPinCode, resetPinCode } from "../PinCode/PinCodeSlice.ts";
 
 const KeyBoard = () => {
   const buttons = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "<", "0", "E"];
@@ -10,6 +10,7 @@ const KeyBoard = () => {
       dispatch(removeIPinCode());
     } else if(btn === 'E'){
       dispatch(checkPinCode());
+      setTimeout(() => dispatch(resetPinCode()), 1000);
     } else {
       dispatch(addIPinCode(btn));
     }
