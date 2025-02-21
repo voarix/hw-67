@@ -23,9 +23,16 @@ export const pinCodeSlice = createSlice({
     },
     removeIPinCode: (state) => {
       state.code = state.code.slice(0, -1);
+    },
+    checkPinCode: (state) => {
+      if (state.code === state.correctCode) {
+        state.status = "success";
+      } else {
+        state.status = "warning";
+      }
     }
   }
 });
 
 export const pinCodeReducer = pinCodeSlice.reducer;
-export const { addIPinCode, removeIPinCode } = pinCodeSlice.actions;
+export const {addIPinCode, removeIPinCode, checkPinCode} = pinCodeSlice.actions;
