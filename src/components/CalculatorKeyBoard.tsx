@@ -2,6 +2,7 @@ import { useDispatch } from "react-redux";
 import {
   calculateResult,
   calculatorOperation,
+  removeCalculator,
   resetCalculator,
 } from "../Calculator/CalculatorSlice.ts";
 
@@ -23,6 +24,7 @@ const CalculatorKeyboard = () => {
     "*",
     "/",
     "C",
+    "<",
   ];
   const dispatch = useDispatch();
 
@@ -31,6 +33,8 @@ const CalculatorKeyboard = () => {
       dispatch(calculateResult());
     } else if (btn === "C") {
       dispatch(resetCalculator());
+    } else if (btn === "<") {
+      dispatch(removeCalculator());
     } else {
       dispatch(calculatorOperation(btn));
     }
