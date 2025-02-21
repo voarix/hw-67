@@ -1,7 +1,10 @@
-import {configureStore} from "@reduxjs/toolkit";
+import { configureStore } from "@reduxjs/toolkit";
+import { pinCodeReducer } from "../PinCode/PinCodeSlice.ts";
 
 export const store = configureStore({
-  reducer: {}
+  reducer: {
+    "pinCode": pinCodeReducer
+  }
 });
 
 export type RootState = ReturnType<typeof store.getState>;

@@ -1,5 +1,5 @@
 import "./App.css";
-import PinCode from "./Container/PinCode.tsx";
+import PinCode from "./PinCode/PinCode.tsx";
 
 const App = () => {
   return(
