@@ -1,10 +1,12 @@
 import "./App.css";
 import PinCode from "./PinCode/PinCode.tsx";
+import Calculator from "./Calculator/Calculator.tsx";
 
 const App = () => {
-  return(
+  return (
     <>
-      <PinCode/>
+      <PinCode />
+      <Calculator />
     </>
   );
 };

@@ -11,7 +11,7 @@ const initialState: PinCodeSlice = {
   code: "",
   correctCode: "9999",
   status: "waiting",
-}
+};
 
 export const pinCodeSlice = createSlice({
   name: "pinCode",
@@ -28,19 +28,20 @@ export const pinCodeSlice = createSlice({
     checkPinCode: (state) => {
       if (state.code === state.correctCode) {
         state.status = "success";
-        state.code = 'Access Granted';
+        state.code = "Access Granted";
         toast.success("PinCode was successfully entered");
       } else {
         state.status = "warning";
-        state.code = 'Access Denied';
+        state.code = "Access Denied";
         toast.error("PinCode was unsuccessfully entered");
       }
     },
     resetPinCode: (state) => {
-      state.code = '';
-    }
-  }
+      state.code = "";
+    },
+  },
 });
 
 export const pinCodeReducer = pinCodeSlice.reducer;
-export const {addIPinCode, removeIPinCode, checkPinCode, resetPinCode} = pinCodeSlice.actions;
+export const { addIPinCode, removeIPinCode, checkPinCode, resetPinCode } =
+  pinCodeSlice.actions;
